@@ -32,3 +32,5 @@ Desfaz as alterações especificadas pelo quarto commit anterior no HEAD e cria 
 Desfaz as alterações feitas pelos commits do quinto commit anterior no master (incluído) até o terceiro commit anterior no master (incluído), mas não cria nenhum commit com as alterações revertidas. A reversão apenas modifica a árvore de trabalho e o índice.
 
 É importante lembrar que o comando **git revert** cria novos commits para desfazer as alterações, preservando assim a integridade do histórico do Git. Esses novos commits podem ser enviados para um repositório remoto, assim como qualquer outro commit.
+
+  
