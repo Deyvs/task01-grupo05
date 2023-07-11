@@ -2,16 +2,14 @@
 
 Tarefa 01 da aula de git.
 
-# Create branch dev
-
-# Git Revert
+### Git Revert
 
 O comando **git revert** é usado para desfazer as alterações introduzidas por um ou mais commits anteriores. Ele cria um novo commit que reverte as mudanças especificadas, permitindo que você desfaça as mudanças dos commits anteriores sem excluí-los completamente do histórico do Git.
 
 Sintaxe básica do comando **git revert**:
 
 ```git revert <commit>```
-Onde <commit> representa o identificador do commit que você deseja reverter.
+Onde ```commit``` representa o identificador do commit que você deseja reverter.
 
 Ele gera automaticamente uma mensagem de commit que descreve a reversão que está sendo aplicada. O commit revertido permanece no histórico, e um novo commit é criado para registrar a reversão.
 
@@ -33,4 +31,29 @@ Desfaz as alterações feitas pelos commits do quinto commit anterior no master 
 
 É importante lembrar que o comando **git revert** cria novos commits para desfazer as alterações, preservando assim a integridade do histórico do Git. Esses novos commits podem ser enviados para um repositório remoto, assim como qualquer outro commit.
 
-  
+### Git Squash
+
+O `git squash` é usado para combinar vários commits relacionados em um único commit. Ele permite reescrever a história do repositório Git, tornando-a mais organizada e coerente.
+
+O squash é útil quando foram feitos vários commits pequenos e deseja-se consolidá-los em um único commit significativo antes de enviá-lo para um branch principal ou compartilhá-lo com outras pessoas.
+
+A sintaxe básica para executar o git squash é a seguinte:
+
+```bash
+git rebase -i HEAD~[n]
+```
+
+Onde [n] é o número de commits que se deseja combinar. 
+
+Isso abrirá um editor de texto com uma lista dos commits selecionados, conforme pode-se ver abaixo:
+
+```
+pick <commit-hash> <commit-message>
+pick <commit-hash> <commit-message>
+pick <commit-hash> <commit-message>
+```
+
+Para combinar commits, deve-se substituir "pick" por "squash" ou simplesmente "s" nos commits que se deseja unir.
+
+Após salvar e fechar o arquivo, o Git irá realizar o squash dos commits selecionados. Isso abrirá outro editor de texto onde pode-se editar a mensagem do commit resultante, se desejar. Basta editar a mensagem, salvar e fechar o arquivo para concluir o squash.
+
