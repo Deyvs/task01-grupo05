@@ -2,6 +2,25 @@
 
 Tarefa 01 da aula de git.
 
+### Git Rebase
+
+1 - Funcionamento: 
+
+O comando "git rebase" combina alterações de um branch em outro, reorganizando o histórico de commits, sendo assim, ele traz as alterações de um branch e as aplica em outro, resultando em um histórico linear. Essa opção é muito útil quando os branches estão "dessincronizados" e você precisa incorporar as alterações de um branch em outro. Porém o rebase deve ser usado com cuidado.
+
+2 - Sintaxe: 
+
+git rebase "branch-de-destino"
+
+3 - Aplicação: 
+
+O git rebase é usado em cenários quando:
+- Precisa incorporar alterações de um branch de desenvolvimento em um branch principal (main);
+- Precisa atualizar um branch local com as alterações mais recentes de um branch remoto;
+- Precisa dividir commits menores e mais específicos antes de enviá-los para revisão;
+
+Fonte: https://www.treinaweb.com.br/blog/git-merge-e-git-rebase-quando-usa-los?gclid=CjwKCAjw2K6lBhBXEiwA5RjtCfnqSedzBRJwDBbHbq-06Q2urk84oEL6Tkb2i6LHoMvYxQg7vmALlxoC9NYQAvD_BwE
+
 ### Git Revert
 
 O comando **git revert** é usado para desfazer as alterações introduzidas por um ou mais commits anteriores. Ele cria um novo commit que reverte as mudanças especificadas, permitindo que você desfaça as mudanças dos commits anteriores sem excluí-los completamente do histórico do Git.
@@ -56,4 +75,5 @@ pick <commit-hash> <commit-message>
 Para combinar commits, deve-se substituir "pick" por "squash" ou simplesmente "s" nos commits que se deseja unir.
 
 Após salvar e fechar o arquivo, o Git irá realizar o squash dos commits selecionados. Isso abrirá outro editor de texto onde pode-se editar a mensagem do commit resultante, se desejar. Basta editar a mensagem, salvar e fechar o arquivo para concluir o squash.
+
 
